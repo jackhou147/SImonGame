@@ -1,0 +1,115 @@
+#main_simon {
+    /*border-radius: 50%;*/
+    /*overflow: hidden;*/
+    width: 80vw;
+    height: 80vw;
+    bottom: calc((100% - 80vw) / 2);
+    left: calc((100% - 80vw) / 2);
+    border: calc(30 / 500 * 80vw) solid #333333;
+}
+
+/*button*/
+.btnRow {
+    height: calc(0.41 * 80vw);
+}
+
+.btnRow:first-child {
+    margin-bottom: calc(calc(0.41 * 80vw) * calc(30 / 205));
+}
+
+.btn {
+   height: calc(0.41 * 80vw);
+   width: calc(0.41 * 80vw);
+}
+
+
+
+/*button*/
+
+/*setting*/
+.setting {
+    height: calc(260 / 500 * 80vw);
+    width: calc(260 / 500 * 80vw);
+    top: calc(90 / 500 * 80vw);
+    left: calc(90 / 500 * 80vw);
+    border: calc(15 / 500 * 80vw) solid #333333;
+    padding-top: calc(50 / 500 * 80vw);
+}
+
+.setting .row{
+    margin-bottom: calc(10 / 500 * 80vw);
+}
+
+.title {
+    font-size: calc(50 / 500 * 80vw);
+    height: calc(50 / 500 * 80vw);
+    bottom: calc(20 / 500 * 80vw);
+}
+
+.indicator {
+    height: calc(10 / 500 * 80vw);
+    bottom: calc(12 / 500 * 80vw);
+}
+
+#strictIndicator {
+    height: calc(10 / 500 * 80vw);
+    width: calc(10 / 500 * 80vw);
+    right: calc(36 / 500 * 80vw);
+} 
+
+.settingBtn {
+    top: calc(30 / 500 * 80vw);
+}
+
+.count #screen {
+    border-radius: 5px;
+    height: calc(40 / 500 * 80vw);
+    width: calc(55 / 500 * 80vw);
+    border: calc(3 / 500 * 80vw) solid rgb(34,34,34);
+    bottom: calc(20 / 500 * 80vw);
+    left: calc(20 / 500 * 80vw);
+}
+
+#startBtn, #strictBtn{
+    height: calc(20 / 500 * 80vw);
+    width: calc(20 / 500 * 80vw);
+    bottom: calc(25 / 500 * 80vw);
+    left: calc(110 / 500 * 80vw);
+}
+
+#strictBtn {
+    left: calc(180 / 500 * 80vw);
+}
+
+.start p, .strict p, .count p{
+    left: calc(100 / 500 * 80vw);
+    font-size: calc(16 / 500 * 80vw);
+}
+
+.strict p{
+    left: calc(170 / 500 * 80vw);
+}
+
+.count p{
+    left: calc(20 / 500 * 80vw);
+}
+
+/*power button*/
+.power {
+    bottom: calc(25 / 500 * 80vw);
+    height: calc(20 / 500 * 80vw);
+    line-height: 0.7;
+    font-size: calc(1em / 500 * 80vw);
+}
+
+#power {
+    height: calc(20 / 500 * 80vw);
+}
+
+#power div {
+    border-radius: 3px;
+}
+
+
+
+
