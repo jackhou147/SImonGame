@@ -7,8 +7,9 @@ body {
 #main_simon {
     width: 500px;
     height: 500px;
-    margin: 50px auto;
-    position: relative;
+    position: absolute;
+    bottom: calc((100% - 500px) / 2);
+    left: calc((100% - 500px) / 2); 
     background-color: #333333;
     box-sizing: border-box;
     border: 30px solid #333333;
