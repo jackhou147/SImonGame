@@ -31,7 +31,11 @@ $(document).ready(function(){
             userArr = [];
             compArr = [];
             count++;
-            $screen.html(count);
+            if(count<10){
+                $screen.html("0"+String(count));
+            }else{
+                $screen.html(count);
+            }
             randNumbers(count);
             autoPress(compArr);
             
@@ -81,15 +85,29 @@ $(document).ready(function(){
             alert("answer is correct and time for newRound");
             newRound();
         }else {
+            (function(){
+                $screen.html("!!");
+                setTimeout(function(){
+                    $screen.html(" ");
+                    setTimeout(function(){
+                        $screen.html("!!");
+                        setTimeout(function(){
+                            wrongAnswer();
+                        },500)
+                    },300)
+                },300)
+            })()
+            
             //if strict mode, count reset to 0, newRound()
             //if not strict mode, count -= 1, newRound();
-            if(strict){
-                alert(strict);
-                count = 0;
-                newRound();
-            }else {
-                count -= 1;
-                newRound();
+            function wrongAnswer(){
+                if(strict){
+                    count = 0;
+                    newRound();
+                }else {
+                    count -= 1;
+                    newRound();
+                }
             }
         }
     }
@@ -102,7 +120,21 @@ $(document).ready(function(){
 
     $("#startBtn").click(function(){
         if(on){
-            newRound();
+            (function(){
+                $screen.html(" ");
+                setTimeout(function(){
+                    $screen.html("- -");
+                    setTimeout(function(){
+                        $screen.html(" ");
+                        setTimeout(function(){
+                            $screen.html("- -");
+                            setTimeout(function(){
+                                newRound();
+                            },800)
+                        },300)
+                    },300)
+                },300)
+            })()
         }
     })
 
@@ -116,12 +148,14 @@ $(document).ready(function(){
             clearTimeout(userTimeOut);
             clearInterval(intervalId);
             $(".btn").removeClass("clicked");
+        }else{
+            $screen.html("- -");
         }
+        
         $("#togglePower").toggleClass("on");
+        
     })
-
-
-
+    
     $strictBtn.click(function(){
         if(on){
             strict = !strict;
@@ -147,5 +181,4 @@ $(document).ready(function(){
             }
         }
     })
-
 })
