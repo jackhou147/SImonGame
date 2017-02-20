@@ -8,19 +8,23 @@ $(document).ready(function(){
     var $startBtn = $("#startBtn");
     var $powerBtn = $("#power");
     var $strictBtn = $("#strictBtn");
+    var $strIndi = $("#strictIndicator");
     var $screen = $("#screen");
     var userArr = [];
     var compArr = [];
     var count = 0;
     var on = false;
+    var off = true;
     var strict = false;
     var userTurn = false;
+    var userTimeOut;
+    var compTimeOut;
+    var intervalId;
     //functions
     function newRound(){
         $(".btn").css("cursor","default");
         userTurn = false;
         $(".btn").removeClass("clicked");
-        alert("newRound");
         if(count+1 > 20){
             console.log("win"); // win
         }else {
@@ -39,15 +43,14 @@ $(document).ready(function(){
             compArr.push(Math.floor(Math.random() * 4) + 1);
         }
     }
-    var userTimeOut;
+    
     function autoPress(arr){
-        var intervalId;
         var i = 0;
         function pressNext(){
             if(i+1 == arr.length){
                 clearInterval(intervalId);
                 userTimeOut = setTimeout(function(){
-                    alert(arr);
+                    console.log(arr);
                     $(".btn").css("cursor","pointer");
                     userTurn = true;
                 },300);
@@ -59,10 +62,12 @@ $(document).ready(function(){
     }
     
     function press(num){
-        $(".btn").removeClass("clicked");
         var index = num - 1;
         btnArr[index].addClass("clicked");
         //play the audio that matches the number
+        compTimeOut = setTimeout(function(){
+            $(".btn").removeClass("clicked");
+        },400)
     }
     
     function checkResult(){
@@ -78,7 +83,8 @@ $(document).ready(function(){
         }else {
             //if strict mode, count reset to 0, newRound()
             //if not strict mode, count -= 1, newRound();
-            if(!strict){
+            if(strict){
+                alert(strict);
                 count = 0;
                 newRound();
             }else {
@@ -102,8 +108,13 @@ $(document).ready(function(){
 
     $powerBtn.click(function(){
         on = !on;
-        if(!on){ //if off
+        off = !off;
+        if(off){ //if off
             count = 0;
+            $screen.html(" ");
+            clearTimeout(compTimeOut);
+            clearTimeout(userTimeOut);
+            clearInterval(intervalId);
             $(".btn").removeClass("clicked");
         }
         $("#togglePower").toggleClass("on");
@@ -112,7 +123,10 @@ $(document).ready(function(){
 
 
     $strictBtn.click(function(){
-        strict = !strict;
+        if(on){
+            strict = !strict;
+            $strIndi.toggleClass("onStrict");
+        }
     });
     
     $(".btn")
