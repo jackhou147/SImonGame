@@ -1,0 +1,113 @@
+#main_simon {
+    width: 500px;
+    height: 500px;
+    bottom: calc((100% - 500px) / 2);
+    left: calc((100% - 500px) / 2); 
+    border: 30px solid #333333;
+}
+
+/*button*/
+.btnRow {
+    height: 205px;
+}
+
+.btnRow:first-child{
+    margin-bottom: 30px;
+}
+
+.btn{
+    height: 205px;
+    width: 205px;
+}
+
+
+/*\button*/
+
+
+/*setting*/
+.setting {
+    height: 260px;
+    width: 260px;
+    top: 90px;
+    left: 90px;
+    border: 15px solid #333333;
+    padding-top: 50px;
+}
+
+.setting .row{
+    margin-bottom: 10px;
+}
+
+
+.title {
+    font-size: 50px;
+    height: 50px;
+    bottom: 20px;
+}
+
+.indicator {
+    height: 10px;
+    bottom: 12px;
+}
+
+#strictIndicator {
+    height: 10px;
+    width: 10px;
+    right: 36px;
+} 
+
+.settingBtn {
+    top: 30px;
+}
+
+.count #screen {
+    height: 40px;
+    width: 55px;
+    border-radius: 10px;
+    border: 3px solid rgb(34,34,34);
+    bottom: 20px;
+    left: 20px;
+}
+
+#startBtn, #strictBtn{
+    height: 20px;
+    width: 20px;
+    bottom: 25px;
+    left: 110px;
+}
+
+#strictBtn {
+    left: 180px;
+}
+
+.start p, .strict p, .count p{
+    left: 100px;
+    font-size: 13px;
+}
+
+.strict p{
+    left: 170px;
+}
+
+.count p{
+    left: 20px;
+}
+
+/*power button*/
+.power {
+    bottom: 25px;
+    height: 20px;
+    
+}
+
+#power {
+    height: 20px;
+}
+
+#power div{
+    border-radius: 3px;
+}
+
+
+/*\setting*/
+

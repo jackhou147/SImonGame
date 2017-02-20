@@ -2,37 +2,38 @@ body {
     background-image: url(backgroundImg.jpg);
     background-repeat: no-repeat;
     overflow-x: hidden;
-}
-
-#main_simon {
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    bottom: calc((100% - 500px) / 2);
-    left: calc((100% - 500px) / 2); 
-    background-color: #333333;
-    box-sizing: border-box;
-    border: 30px solid #333333;
-    border-radius: 50%;
-    overflow: hidden;
     
 }
 
-/*button*/
+#main_simon {
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    background-color: #333333;
+}
+
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
 .btnRow {
-    height: 205px;
     position: relative;
 }
 
-.btnRow:first-child{
-    margin-bottom: 30px;
+.btn {
+    position: absolute;
+    
 }
 
-.btn{
-    height: 205px;
-    width: 205px;
-    position: absolute;
-    background-color: yellow;
+#btn1, #btn3{
+    left: 0px;
+}
+
+#btn2, #btn4{
+    right: 0px;
 }
 
 #btn1, #btn3{
@@ -58,24 +59,15 @@ body {
 #btn4 {
     background-color: #094A8F;
 }
-/*\button*/
 
-
-/*setting*/
 .setting {
     position: absolute;
-    height: 260px;
-    width: 260px;
-    top: 90px;
-    left: 90px;
-    background-color: #ECE7EE;
     border-radius: 50%;
+    background-color: #ECE7EE;
     text-align: center;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    border: 15px solid #333333;
-    padding-top: 50px;
 }
 
 .setting .row{
@@ -83,7 +75,6 @@ body {
     flex-direction: row;
     justify-content: space-around;
     padding-bottom: 0;
-    margin-bottom: 10px;
     align-items:baseline;
 }
 
@@ -94,32 +85,22 @@ body {
 }
 
 .title {
-    font-size: 50px;
-    height: 50px;
     position: relative;
-    bottom: 20px;
 }
 
 .indicator {
-    width: 100%;
     position: relative;
-    height: 10px;
-    bottom: 12px;
+    width: 100%;
 }
 
 #strictIndicator {
-    height: 10px;
-    width: 10px;
     background-color: #32050C;
     border-radius: 50%;
     position: absolute;
-    right: 36px;
 } 
 
 .settingBtn {
     position: relative;
-    background-color: aqua;
-    top: 30px;
 }
 
 .count {
@@ -129,70 +110,38 @@ body {
 }
 
 .count #screen {
-    height: 40px;
-    width: 55px;
     background-color: rgb(50,5,12);
-    border-radius: 10px;
     box-sizing: border-box;
-    border: 3px solid rgb(34,34,34);
     position: absolute;
-    bottom: 20px;
-    left: 20px;
 }
 
 #startBtn, #strictBtn{
-    height: 20px;
-    width: 20px;
     border-radius: 50%;
     background-color: rgb(252,1,2);
     box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.75);
     position: absolute;
-    bottom: 25px;
-    left: 110px;
-    
-    
 }
 
 #strictBtn {
     background-color: rgb(255,255,0);
-    left: 180px
 }
 
 .start p, .strict p, .count p{
     position: absolute;
     bottom: 0;
-    left: 100px;
-    font-size: 13px;
 }
-
-.strict p{
-    left: 170px;
-}
-
-.count p{
-    left: 20px;
-}
-
-
-
-
-
-
 
 /*power button*/
 .power {
     position: absolute;
-    bottom: 25px;
     left: 25%;
     width: 50%;
     display: flex;
-    height: 20px;
     
 }
 
 #power {
     width: 40%;
-    height: 20px;
     background-color: rgb(34,34,34);
     position: absolute;
     border-radius: 3px;
@@ -200,7 +149,9 @@ body {
 
 .power div {
     bottom: 0;
+    padding-bottom: 0;
 }
+
 
 .power div:first-child {
     position: absolute;
@@ -219,82 +170,5 @@ body {
     background-color: #3193DE;
     bottom: 5%;
     left: 3%;
-    border-radius: 3px;
 }
 
-
-/*\setting*/
-
-@media only screen and (max-width: 500px){
-   
-    /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-    #main_simon {
-        width: 240px;
-        height: 240px;
-        overflow: visible;
-        
-    }
-    
-    *:not(#main_simon){
-        width: 60px;
-        height: 60px;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-}
