@@ -13,6 +13,7 @@ $(document).ready(function(){
     var userArr = [];
     var compArr = [];
     var count = 0;
+    var startBtnClick = 0;
     var on = false;
     var off = true;
     var strict = false;
@@ -130,21 +131,25 @@ $(document).ready(function(){
 
     $("#startBtn").click(function(){
         if(on){
-            (function(){
-                $screen.html(" ");
-                setTimeout(function(){
-                    $screen.html("- -");
+            startBtnClick ++;
+            if(startBtnClick < 2){
+                (function(){
+                    $screen.html(" ");
                     setTimeout(function(){
-                        $screen.html(" ");
+                        $screen.html("- -");
                         setTimeout(function(){
-                            $screen.html("- -");
+                            $screen.html(" ");
                             setTimeout(function(){
-                                newRound();
-                            },800)
+                                $screen.html("- -");
+                                setTimeout(function(){
+                                    newRound();
+                                },800)
+                            },300)
                         },300)
                     },300)
-                },300)
-            })()
+                })()
+            }
+            
         }
     })
 
@@ -154,6 +159,7 @@ $(document).ready(function(){
         
         if(off){ //if off
             count = 0;
+            startBtnClick = 0;
             $screen.html(" ");
             userTurn = false;
             $(".btn").css("cursor","default");
@@ -194,4 +200,5 @@ $(document).ready(function(){
             }
         }
     })
+    
 })
