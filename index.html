@@ -6,9 +6,18 @@
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" media="(max-width:510px)" href="simon-small.css">
         <link rel="stylesheet" media="(min-width:511px)" href="simon-large.css">
+        <script src="jquery-3.1.1.min.js"></script>
         <script src="script.js"></script>
     </head>
     <body>
+        <audio id="aud1" type="audio/mp3" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" preload="auto">
+        </audio>
+        <audio id="aud2" type="audio/mp3" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" preload="auto">
+        </audio>
+        <audio id="aud3" type="audio/mp3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" preload="auto">
+        </audio>
+        <audio id="aud4" type="audio/mp3" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" preload="auto">
+        </audio>
         <div id="main_simon">
             <div class="btnRow">
                 <div class="btn" id="btn1"></div>
@@ -18,9 +27,9 @@
                 <div class="btn" id="btn3"></div>
                 <div class="btn" id="btn4"></div>
             </div>
-            
-            
-            
+
+
+
             <div class="setting">
                 <div class="row title"><p>Simon</p></div>
                 <div class="row indicator">
@@ -43,7 +52,7 @@
                 <div class="row power">
                     <div><p>Off</p></div>
                     <div id="power">
-                        <div></div>
+                        <div id="togglePower"></div>
                     </div>
                     <div><p>On</p></div>
                 </div>
@@ -51,4 +60,3 @@
         </div>
     </body>
 </html>
-

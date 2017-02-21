@@ -4,7 +4,12 @@ $(document).ready(function(){
     var $btn2 = $("#btn2");
     var $btn3 = $("#btn3");
     var $btn4 = $("#btn4");
+    var audio1 = $("#aud1");
+    var audio2 = $("#aud2");
+    var audio3 = $("#aud3");
+    var audio4 = $("#aud4");
     var btnArr = [$btn1,$btn2,$btn3,$btn4];
+    var audArr = [audio1,audio2,audio3,audio4];
     var $startBtn = $("#startBtn");
     var $powerBtn = $("#power");
     var $strictBtn = $("#strictBtn");
@@ -21,6 +26,7 @@ $(document).ready(function(){
     var userTimeOut;
     var compTimeOut;
     var intervalId;
+
     //functions
     function newRound(){
         if(on){
@@ -76,6 +82,7 @@ $(document).ready(function(){
             var index = num - 1;
             btnArr[index].addClass("clicked");
             //play the audio that matches the number
+            audArr[index].get(0).play();
             compTimeOut = setTimeout(function(){
                 $(".btn").removeClass("clicked");
             },400)
@@ -198,6 +205,27 @@ $(document).ready(function(){
             if(userArr.length == compArr.length){
                 checkResult();
             }
+        }
+    })
+    
+    $btn1.mousedown(function(){
+        if($(this).hasClass("clicked")){
+            audio1.get(0).play();
+        }
+    })
+    $btn2.mousedown(function(){
+        if($(this).hasClass("clicked")){
+            audio2.get(0).play();
+        }
+    })
+    $btn3.mousedown(function(){
+        if($(this).hasClass("clicked")){
+            audio3.get(0).play();
+        }
+    })
+    $btn4.mousedown(function(){
+        if($(this).hasClass("clicked")){
+            audio4.get(0).play();
         }
     })
     
