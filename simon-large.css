@@ -97,7 +97,8 @@
 .power {
     bottom: 25px;
     height: 20px;
-    
+    width: 45%;
+    left: calc((100% - 45%) / 2);
 }
 
 #power {
