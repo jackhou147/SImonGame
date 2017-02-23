@@ -1,115 +1,238 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,div,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    border-radius: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/***************************************RESET*************************************************/
+
 #main_simon {
-    /*border-radius: 50%;*/
-    /*overflow: hidden;*/
-    width: 80vw;
-    height: 80vw;
-    bottom: calc((100% - 80vw) / 2);
-    left: calc((100% - 80vw) / 2);
-    border: calc(30 / 500 * 80vw) solid #333333;
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    left: 10%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-/*button*/
+/**************button row****************/
 .btnRow {
-    height: calc(0.41 * 80vw);
+    width: 80%;
+    height: 40%;
+    left: 10%;
+    border: 1px solid;
+    display: flex;
+    flex-direction: row;
 }
 
-.btnRow:first-child {
-    margin-bottom: calc(calc(0.41 * 80vw) * calc(30 / 205));
+#btn1, #btn2, #btn3, #btn4{
+    height: 100%;
+    width: 45%;
+}
+/**************button row****************/
+
+/**************setting****************/
+.setting .row,
+.setting .row * {
+    position: relative;
 }
 
-.btn {
-   height: calc(0.41 * 80vw);
-   width: calc(0.41 * 80vw);
-}
-
-
-
-/*button*/
-
-/*setting*/
 .setting {
-    height: calc(260 / 500 * 80vw);
-    width: calc(260 / 500 * 80vw);
-    top: calc(90 / 500 * 80vw);
-    left: calc(90 / 500 * 80vw);
-    border: calc(15 / 500 * 80vw) solid #333333;
-    padding-top: calc(50 / 500 * 80vw);
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    border-radius: 0px;
+    left: 30%;
+    top: 35%;
+    padding: 0;
+    border: 10px solid #333333;
+    border-radius: 20px;
 }
 
-.setting .row{
-    margin-bottom: calc(10 / 500 * 80vw);
+.power {
+    width: 80%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
 }
 
 .title {
-    font-size: calc(50 / 500 * 80vw);
-    height: calc(50 / 500 * 80vw);
-    bottom: calc(20 / 500 * 80vw);
+    width: 98.3%;
+    height: 40%;
+    font-size: 3em;
 }
 
 .indicator {
-    height: calc(10 / 500 * 80vw);
-    bottom: calc(12 / 500 * 80vw);
+    position: absolute;
+    height: 10%;
+}
+
+.settingBtn {
+    height: 30%;
+}
+
+.power {
+    width: 100%;
+    left: 0;
 }
 
 #strictIndicator {
-    height: calc(10 / 500 * 80vw);
-    width: calc(10 / 500 * 80vw);
-    right: calc(36 / 500 * 80vw);
-} 
-
-.settingBtn {
-    top: calc(30 / 500 * 80vw);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right:19%;
 }
 
-.count #screen {
-    border-radius: 5px;
-    height: calc(40 / 500 * 80vw);
-    width: calc(55 / 500 * 80vw);
-    border: calc(3 / 500 * 80vw) solid rgb(34,34,34);
-    bottom: calc(20 / 500 * 80vw);
-    left: calc(20 / 500 * 80vw);
+.settingBtn .col {
+    width: 30%;
+    height: 100%;
+    
 }
 
-#startBtn, #strictBtn{
-    height: calc(20 / 500 * 80vw);
-    width: calc(20 / 500 * 80vw);
-    bottom: calc(25 / 500 * 80vw);
-    left: calc(110 / 500 * 80vw);
+.settingBtn .col p{
+    position: relative;
 }
 
-#strictBtn {
-    left: calc(180 / 500 * 80vw);
+/********count***********/
+.setting .settingBtn .count{
+    position: absolute;
+    left: 2%;
 }
 
-.start p, .strict p, .count p{
-    left: calc(100 / 500 * 80vw);
-    font-size: calc(16 / 500 * 80vw);
+
+.col #screen {
+    height: 60%;
 }
 
-.strict p{
-    left: calc(170 / 500 * 80vw);
+.count div:not(#screen){
+    position: absolute;
+    bottom: 0;
+}
+/********count***********/
+
+
+/********start***********/
+
+.setting .settingBtn .start{
+    position: absolute;
+    top: 0;
 }
 
-.count p{
-    left: calc(20 / 500 * 80vw);
+
+.start #startBtn{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 15%;
+    left: 25%;
 }
 
-/*power button*/
-.power {
-    bottom: calc(25 / 500 * 80vw);
-    height: calc(20 / 500 * 80vw);
-    line-height: 0.7;
-    font-size: calc(1em / 500 * 80vw);
+#main_simon .start div:not(#startBtn){
+    position: absolute;
+    bottom: 0;
+    font-size: 80%;
+}
+/********\start***********/
+
+
+/********strict***********/
+.setting .settingBtn .strict {
+    position: absolute;
+    right: 2%;
 }
 
-#power {
-    height: calc(20 / 500 * 80vw);
+.setting .settingBtn .strict div:not(#strictBtn) {
+    position: absolute;
+    bottom: 0;
+    font-size: 75%;
 }
 
-#power div {
-    border-radius: 3px;
+.setting .settingBtn .strict div#strictBtn {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 15%;
+    left: 25%;
 }
 
+
+/********\strict***********/
+
+/***********power*/
+#main_simon #power{
+    position: absolute;
+    top: 40%;
+    height: 50%;
+}
+/**********\power*/
+
+
+#main_simon .setting .col p{
+    font-size: 13px;;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************setting****************/
 
 
 
