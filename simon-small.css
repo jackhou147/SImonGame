@@ -1,115 +1,466 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,div,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    border-radius: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    transition: all 0.3s ease;
+}
+
+
+
+/***************************************RESET*************************************************/
+
 #main_simon {
-    /*border-radius: 50%;*/
-    /*overflow: hidden;*/
-    width: 80vw;
-    height: 80vw;
-    bottom: calc((100% - 80vw) / 2);
-    left: calc((100% - 80vw) / 2);
-    border: calc(30 / 500 * 80vw) solid #333333;
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    left: 10%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-/*button*/
+/**************button row****************/
 .btnRow {
-    height: calc(0.41 * 80vw);
+    width: 80%;
+    height: 40%;
+    left: 10%;
+    border: 1px solid;
+    display: flex;
+    flex-direction: row;
 }
 
-.btnRow:first-child {
-    margin-bottom: calc(calc(0.41 * 80vw) * calc(30 / 205));
+#btn1, #btn2, #btn3, #btn4{
+    height: 100%;
+    width: 45%;
+}
+/**************button row****************/
+
+/**************setting****************/
+.setting .row,
+.setting .row * {
+    position: relative;
 }
 
-.btn {
-   height: calc(0.41 * 80vw);
-   width: calc(0.41 * 80vw);
-}
-
-
-
-/*button*/
-
-/*setting*/
 .setting {
-    height: calc(260 / 500 * 80vw);
-    width: calc(260 / 500 * 80vw);
-    top: calc(90 / 500 * 80vw);
-    left: calc(90 / 500 * 80vw);
-    border: calc(15 / 500 * 80vw) solid #333333;
-    padding-top: calc(50 / 500 * 80vw);
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    border-radius: 0px;
+    left: 30%;
+    top: 35%;
+    padding: 0;
+    border: 10px solid #333333;
+    border-radius: 20px;
 }
 
-.setting .row{
-    margin-bottom: calc(10 / 500 * 80vw);
+#screen {
+    border-radius: 10px;
+}
+
+#main_simon .power {
+    height: 10%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
 
 .title {
-    font-size: calc(50 / 500 * 80vw);
-    height: calc(50 / 500 * 80vw);
-    bottom: calc(20 / 500 * 80vw);
+    width: 98.3%;
+    height: 25%;
+    font-size: 4.5vh;
+    padding-top: 5%;
+    box-sizing: border-box;
 }
 
 .indicator {
-    height: calc(10 / 500 * 80vw);
-    bottom: calc(12 / 500 * 80vw);
+    position: absolute;
+    height: 10%;
+    top: 31%;
 }
 
 #strictIndicator {
-    height: calc(10 / 500 * 80vw);
-    width: calc(10 / 500 * 80vw);
-    right: calc(36 / 500 * 80vw);
-} 
-
-.settingBtn {
-    top: calc(30 / 500 * 80vw);
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 76.5%;
+    top: 2px;
 }
 
-.count #screen {
-    border-radius: 5px;
-    height: calc(40 / 500 * 80vw);
-    width: calc(55 / 500 * 80vw);
-    border: calc(3 / 500 * 80vw) solid rgb(34,34,34);
-    bottom: calc(20 / 500 * 80vw);
-    left: calc(20 / 500 * 80vw);
+#main_simon .settingBtn {
+    height: 63.5%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 25%;
+        
 }
 
-#startBtn, #strictBtn{
-    height: calc(20 / 500 * 80vw);
-    width: calc(20 / 500 * 80vw);
-    bottom: calc(25 / 500 * 80vw);
-    left: calc(110 / 500 * 80vw);
+.settingBtn .col {
+    width: 30%;
+    height: 100%;
+    
 }
 
-#strictBtn {
-    left: calc(180 / 500 * 80vw);
+.settingBtn .col p{
+    position: relative;
 }
 
-.start p, .strict p, .count p{
-    left: calc(100 / 500 * 80vw);
-    font-size: calc(16 / 500 * 80vw);
+/********count***********/
+.setting .settingBtn .count{
+    position: absolute;
+    top: 0;
+    height: 60%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3;
 }
 
-.strict p{
-    left: calc(170 / 500 * 80vw);
+
+.col #screen {
+    height: 83%;
+    width: 60%;
+    left: 20%;
+    padding-top: 6%;
 }
 
-.count p{
-    left: calc(20 / 500 * 80vw);
+.count div:not(#screen){
+    position: absolute;
+    bottom: -8%;
+    width: 50%;
+    left: 25%;
+}
+/********count***********/
+
+.setting .settingBtn .start, .setting .settingBtn .strict{
+    position: absolute;
+    height: 40%;
+    bottom: 0;
 }
 
-/*power button*/
-.power {
-    bottom: calc(25 / 500 * 80vw);
-    height: calc(20 / 500 * 80vw);
-    line-height: 0.7;
-    font-size: calc(1em / 500 * 80vw);
+/********start***********/
+
+.setting .settingBtn .start{
+    left: 5%;
 }
 
-#power {
-    height: calc(20 / 500 * 80vw);
+
+.start #startBtn{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 15%;
+    left: 25%;
 }
 
-#power div {
-    border-radius: 3px;
+#main_simon .start div:not(#startBtn){
+    position: absolute;
+    bottom: 0;
+    font-size: 80%;
+}
+/********\start***********/
+
+
+/********strict***********/
+.setting .settingBtn .strict {
+    position: absolute;
+    right: 5%;
 }
 
+.setting .settingBtn .strict div:not(#strictBtn) {
+    position: absolute;
+    bottom: 0;
+    font-size: 75%;
+}
+
+.setting .settingBtn .strict div#strictBtn {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 15%;
+    left: calc((100% - 10px) / 2);
+}
+
+
+/********\strict***********/
+
+/***********power*/
+#main_simon #power{
+    position: absolute;
+    top: 55%;
+    height: 100%;
+    top: 0;
+}
+
+#main_simon .setting .power div:not(#togglePower){
+    width: 30%;
+}
+
+#main_simon .setting .power{
+        bottom: 1px;
+}
+/**********\power*/
+
+
+#main_simon .setting .col p{
+    font-size: 2.5vw;
+}
+
+#main_simon #screen {
+    font-size: 5vw;
+}
+
+
+
+/**************setting****************/
+
+
+
+@media only screen and (max-width: 330px) {
+    #main_simon .setting {
+        width: 55%;
+        left: calc((100% - 55%) / 2);
+    }
+    
+    #main_simon .setting .title{
+        display: none;
+    }
+    
+    #main_simon .setting .power{
+        position: absolute;
+        height: 20%;
+        bottom: 0;
+    }
+    
+    #main_simon .setting .power div:not(#togglePower){
+        width: 32%;
+    }
+    
+    html body #main_simon .setting .power #power{
+        height: 55%;
+        top: 40%;
+        width: 30%;
+        left: 35%;
+    }
+    
+    
+    
+    html body #main_simon .setting .settingBtn{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        overflow: hidden;
+        top: 0;
+    }
+    
+    #main_simon .setting .settingBtn .start,
+    #main_simon .setting .settingBtn .strict{
+        position: absolute;
+        height: 50%;
+        top: 49%;
+        right: 5%;
+        width: 43%;
+    }
+    
+    #main_simon .setting .settingBtn .start div:not(#startBtn),
+    #main_simon .setting .settingBtn .strict div:not(#strictBtn){
+        height: 15%;
+        bottom: 3px;
+        width: 100%;
+    }
+    
+    #main_simon .setting .settingBtn .start p,
+    #main_simon .setting .settingBtn .strict p{
+        height: 100%;
+        font-size: 100%;
+    }
+    
+    #main_simon .setting .settingBtn .start{
+        left: 5%;
+    }
+    
+    #main_simon .setting .settingBtn .start #startBtn,
+    #main_simon .setting .settingBtn .strict #strictBtn
+    {
+        width: 6.5vw;
+        height: 6.5vw;
+        left: calc((100% - 6.5vw) / 2);
+        top: calc((100% - 6.5vw) / 2.5);
+    }
+    
+    /*** strict-indicator****/
+    #main_simon .setting .indicator {
+        position: absolute;
+        top: 38.5%;
+        height: 8%;
+    }
+    
+    #main_simon .setting .indicator div{
+        left: 69%;
+        top: 34%;
+        width: 6px;
+        height: 6px;
+    }
+    /***\strict-indicator****/
+    
+    /******count*****/
+    #main_simon .setting .settingBtn .count{
+        position: absolute;
+        height: 60%;
+        top: 0;
+        width: 100%;
+        left: 0;
+    }
+    
+    #main_simon .setting #screen {
+        width: 80%;
+        font-size: 15.5vw;
+        left: 10%;
+        top: 2%;
+    }
+    
+    #main_simon .setting .count p {
+        display: none;
+    }
+    /******\count*****/
+}
+
+@media only screen and (min-width: 331px) and (max-width: 450px){
+    #main_simon .setting .settingBtn .count{
+        width: 50%;
+        height: 100% ;
+        z-index: 3;
+        left: 2%;
+    }
+    
+    #main_simon .setting .settingBtn .count p{
+        display: none;
+    }
+    
+    #main_simon .setting .settingBtn .count div{
+        height: 80%;
+        top: 10%;
+        width: 100%;
+        left: 0;
+    }
+    
+    #main_simon .setting .settingBtn .start, 
+    #main_simon .setting .settingBtn .strict {
+        height: 40%;
+        right: 8%;
+    }
+    
+    #main_simon .setting .settingBtn .strict{
+        top: 12%;
+    }
+    
+    #main_simon .setting .settingBtn .start div:not(#startBtn),
+    #main_simon .setting .settingBtn .strict div:not(#strictBtn)
+    {
+        width: 100%;
+        height: 37%;
+    }
+    
+    #main_simon .setting .settingBtn .start p,
+    #main_simon .setting .settingBtn .strict p {
+        font-size: 3vw;
+        left: -3px;
+    }
+    
+    #main_simon .setting .settingBtn .start{
+        top: 58%;
+        left: 61%
+    
+    }
+    
+    #main_simon .setting .settingBtn .start #startBtn{
+        left: 35%;
+    }
+    
+    #main_simon .setting .indicator {
+        top: 0%;
+    }
+    
+    #main_simon .setting .indicator div{
+        left: 72.5%;
+        height: 8px;
+        width: 8px;
+        top: 20%;
+    }
+    
+    #main_simon .setting #screen{
+        font-size: 5vh;
+        padding-top: 30%;
+    }
+    
+    html body #main_simon .setting .power #power{
+        position: absolute;
+        width: 30%;
+        left: 35%;
+    }
+    
+    html body #main_simon .setting .power div:not(#power) p{
+        line-height: 0.8;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
 
 
 

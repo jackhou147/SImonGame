@@ -37,7 +37,6 @@ $(document).ready(function(){
                 console.log("win"); // win
             }else {
                 userArr = [];
-                compArr = [];
                 count++;
                 if(count<10){
                     $screen.html("0"+String(count));
@@ -52,9 +51,7 @@ $(document).ready(function(){
     
     function randNumbers(num){
         if(on){
-            for(var i=0; i<num; i++){
             compArr.push(Math.floor(Math.random() * 4) + 1);
-            }
         }
     }
     
@@ -120,10 +117,13 @@ $(document).ready(function(){
                 function wrongAnswer(){
                         if(strict){
                             count = 0;
+                            userArr = [];
+                            compArr = [];
                             newRound();
                         }else {
-                            count -= 1;
-                            newRound();
+                            $screen.html("0"+count);
+                            userArr = [];
+                            autoPress(compArr);
                         }
                 }
             }
@@ -166,6 +166,8 @@ $(document).ready(function(){
         
         if(off){ //if off
             count = 0;
+            userArr = [];
+            compArr = [];
             startBtnClick = 0;
             $screen.html(" ");
             userTurn = false;
@@ -191,8 +193,8 @@ $(document).ready(function(){
     
     $(".btn")
     .mousedown(function(){
-        if(userTurn){
-            clearTimeout(userTimeOut);
+        clearTimeout(userTimeOut);
+        if(on){
             $(this).addClass("clicked");
             var thisId = this.id;
             var thisNum = Number(thisId.charAt(3));
@@ -200,11 +202,9 @@ $(document).ready(function(){
         }
     })
     .mouseup(function(){
-        if(userTurn){
-            $(this).removeClass("clicked");
+        $(this).removeClass("clicked");
             if(userArr.length == compArr.length){
                 checkResult();
-            }
         }
     })
     

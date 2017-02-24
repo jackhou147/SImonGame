@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Simon Game</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" media="(max-width:510px)" href="simon-small.css">
         <link rel="stylesheet" media="(min-width:511px)" href="simon-large.css">
@@ -10,13 +10,14 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <audio id="aud1" type="audio/mp3" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" preload="auto">
+        <audio id="aud1">
+            <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg">
         </audio>
-        <audio id="aud2" type="audio/mp3" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" preload="auto">
+        <audio id="aud2" type="audio/mpeg" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" preload="auto">
         </audio>
-        <audio id="aud3" type="audio/mp3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" preload="auto">
+        <audio id="aud3" type="audio/mpeg" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" preload="auto">
         </audio>
-        <audio id="aud4" type="audio/mp3" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" preload="auto">
+        <audio id="aud4" type="audio/mpeg" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" preload="auto">
         </audio>
         <div id="main_simon">
             <div class="btnRow">
@@ -50,11 +51,11 @@
                     </div>
                 </div>
                 <div class="row power">
-                    <div><p>Off</p></div>
+                    <div class="power__off"><p>Off</p></div>
                     <div id="power">
                         <div id="togglePower"></div>
                     </div>
-                    <div><p>On</p></div>
+                    <div class="power__on"><p>On</p></div>
                 </div>
             </div>
         </div>
