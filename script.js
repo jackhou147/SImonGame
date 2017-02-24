@@ -117,10 +117,13 @@ $(document).ready(function(){
                 function wrongAnswer(){
                         if(strict){
                             count = 0;
+                            userArr = [];
+                            compArr = [];
                             newRound();
                         }else {
-                            count -= 1;
-                            newRound();
+                            $screen.html("0"+count);
+                            userArr = [];
+                            autoPress(compArr);
                         }
                 }
             }
@@ -163,6 +166,8 @@ $(document).ready(function(){
         
         if(off){ //if off
             count = 0;
+            userArr = [];
+            compArr = [];
             startBtnClick = 0;
             $screen.html(" ");
             userTurn = false;
@@ -189,10 +194,12 @@ $(document).ready(function(){
     $(".btn")
     .mousedown(function(){
         clearTimeout(userTimeOut);
+        if(on){
             $(this).addClass("clicked");
             var thisId = this.id;
             var thisNum = Number(thisId.charAt(3));
             userArr.push(thisNum);
+        }
     })
     .mouseup(function(){
         $(this).removeClass("clicked");

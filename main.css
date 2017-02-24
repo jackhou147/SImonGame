@@ -5,6 +5,10 @@ body {
 
 }
 
+* {
+    transition: all 0.3s ease;
+}
+
 #main_simon {
     border-radius: 50%;
     overflow: hidden;
@@ -155,6 +159,7 @@ p {
     position: absolute;
     border-radius: 3px;
     cursor: pointer;
+    left: 30%;
 }
 
 .power div {

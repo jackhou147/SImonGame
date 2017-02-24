@@ -48,9 +48,7 @@ table {
 	border-spacing: 0;
 }
 
-* {
-    transition: all 0.3s ease;
-}
+
 
 
 
@@ -284,9 +282,11 @@ table {
         width: 32%;
     }
     
-    #main_simon #power{
+    html body #main_simon .setting .power #power{
         height: 55%;
         top: 40%;
+        width: 30%;
+        left: 35%;
     }
     
     
@@ -439,6 +439,18 @@ table {
         font-size: 5vh;
         padding-top: 30%;
     }
+    
+    html body #main_simon .setting .power #power{
+        position: absolute;
+        width: 30%;
+        left: 35%;
+    }
+    
+    html body #main_simon .setting .power div:not(#power) p{
+        line-height: 0.8;
+    }
+    
+    
     
     
     
