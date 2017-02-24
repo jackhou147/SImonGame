@@ -58,6 +58,11 @@
 
 .settingBtn {
     top: 30px;
+    height: 35%;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    
 }
 
 .count #screen {
@@ -97,7 +102,8 @@
 .power {
     bottom: 25px;
     height: 20px;
-    
+    width: 45%;
+    left: calc((100% - 45%) / 2);
 }
 
 #power {
